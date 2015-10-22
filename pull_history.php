@@ -7,7 +7,7 @@ if($_POST) {
 	$month = date('n');
 	$day = date('j');
 }
-	
+
 $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
 
 ?>
@@ -15,7 +15,7 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
     <div class="Title">
         <p><? echo "This Day in Rock History for $tdate" ?></p>
     </div>
-    <div class-"heading"> 
+    <div class-"heading">
     </div>
 
 <?php
@@ -31,7 +31,7 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
             				<p><? echo $row["year"] ?></p>
         			</div>
         			<div class="Cell">
-            				<p><? echo $row["history"] ?></p>						
+            				<p><? echo $row["history"] ?></p>
         			</div>
 			</div>
 			<?
