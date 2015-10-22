@@ -5,33 +5,33 @@
 
 <script>
 $(function() {
-  $.ajax({  
-      type: "POST",  
-      url: "pull_history.php",  
-      data: "" + status,  
-      success: function(data){  
+  $.ajax({
+      type: "POST",
+      url: "pull_history.php",
+      data: "" + status,
+      success: function(data){
           document.getElementById("demo").innerHTML = data;
 
-      }  
+      }
   });
 });
 </script>
 
 <script>
 $(document).ready(function()
-{	
+{
 	$(document).on('submit', '#reg-form', function()
 	{
-		
+
 		var data = $(this).serialize();
-		
+
 		$.ajax({
-		
+
 		type : 'POST',
 		url  : 'pull_history.php',
 		data : data,
 		success :  function(data)
-				{		
+				{
 				document.getElementById("demo").innerHTML = data;
 				}
 		});
@@ -42,7 +42,7 @@ $(document).ready(function()
 </script>
 <style type="text/css">
     body { background: #333333; }
-    p 
+    p
     {
     font-family: sans-serif;
     }
@@ -77,25 +77,27 @@ $(document).ready(function()
     }
     div.row:nth-child(odd)
     {
-	background: #daedb2;
+		background: #daedb2;
     }
     div.row:nth-child(even)
     {
-	background: #c6d4a8;
+		background: #c6d4a8;
     }
     div.Container
     {
-    margin: auto;
-    width: 60%;
-    background: #5e6d3d;
-    padding: 10px;
+    	margin: auto;
+    	width: 60%;
+    	background: #5e6d3d;
+    	padding: 10px;
     }
-    select:required:invalid {
-color: #999;
-}
-option {
-color: #000;
-}
+    select:required:invalid
+    {
+		color: #999;
+	}
+	option
+	{
+		color: #000;
+	}
 
 </style>
 
@@ -108,31 +110,31 @@ color: #000;
 <form id="reg-form" name="reg-form" method="post">
 <select name="month" required  id="month" placeholder="Month" size="1">
 <option value="" disabled selected>Month</option>
-<?php 
-$mo = 1; 
+<?php
+$mo = 1;
 while($mo <= 12) {
     echo '<option value= "' . $mo . '">' . date("F", mktime(0, 0, 0, $mo+1, 0, 0)) . '</option><br>';
     echo "\n";
     $mo++;
-} 
+}
 ?>
 </select>
 <select name="day" required id="day" placeholder="Day" size="1">
 <option value="" disabled selected>Day</option>
 <?php
-$da = 1; 
+$da = 1;
 while($da <= 31) {
     echo '<option value= "' . $da . '">' . date("j", mktime(0, 0, 0, 0, $da, 0)) . '</option><br>';
     echo "\n";
     $da++;
-} 
+}
 ?>
 
  </select>
  <button type="submit" >Go</button>
 
  </form>
-  
+
     <p id="demo"></p>
 
 </div>
