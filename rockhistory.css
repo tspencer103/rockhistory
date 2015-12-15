@@ -1,0 +1,71 @@
+   * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+     box-sizing: border-box;
+    }
+    html, body 
+    {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    background: #fff; 
+    font-family: 'Lato', sans-serif;
+
+    }
+    div.Container
+    {
+    width: 100%;
+    background: #5e6d3d;
+    margin: 0px;
+    padding: 10px;
+    }
+    p 
+    {
+    font-weight: 400;
+    }
+    .Table
+    {
+        display: Table;
+        margin: auto;
+    }
+    .Title
+    {
+        display: table-caption;
+        text-align: center;
+        background: #c6d4a8;
+    }
+    #title 
+    { 
+    font-weight: 900;
+    font-size: larger;
+    }
+    .Heading
+    {
+        display: table-row;
+        font-weight: 900;
+        text-align: center;
+    }
+    .Row
+    {
+        display: table-row;
+    }
+    div.Row:nth-child(odd)
+    {
+	background: #daedb2;
+   }
+    div.Row:nth-child(even)
+    {
+	background: #c6d4a8;
+    }
+    .Cell
+    {
+        display: table-cell;
+        padding-left: 20px;
+    }
+    select:required:invalid 
+    {
+	color: #999;
+    }
+    option {
+	color: #000;
+    }
