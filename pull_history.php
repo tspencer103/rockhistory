@@ -20,7 +20,7 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
 
 <?php
 	/* Query the database */
-	$db = mysql_connect("localhost","babewe5_wlup", "lup234");
+	$db = mysql_connect("localhost","user", "pw");
 	mysql_select_db("babewe5_wlup",$db);
 	$result = mysql_query("SELECT * FROM RockHistory081512 WHERE month=$month AND day=$day ORDER BY year",$db);
 
