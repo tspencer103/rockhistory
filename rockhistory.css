@@ -2,70 +2,99 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
      box-sizing: border-box;
-    }
-    html, body 
-    {
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    background: #fff; 
-    font-family: 'Lato', sans-serif;
+     }
 
-    }
-    div.Container
-    {
-    width: 100%;
-    background: #5e6d3d;
-    margin: 0px;
-    padding: 10px;
-    }
-    p 
-    {
-    font-weight: 400;
-    }
-    .Table
-    {
-        display: Table;
-        margin: auto;
-    }
-    .Title
-    {
-        display: table-caption;
-        text-align: center;
-        background: #c6d4a8;
-    }
-    #title 
-    { 
-    font-weight: 900;
-    font-size: larger;
-    }
-    .Heading
-    {
-        display: table-row;
-        font-weight: 900;
-        text-align: center;
-    }
-    .Row
-    {
-        display: table-row;
-    }
-    div.Row:nth-child(odd)
-    {
-	background: #daedb2;
+       body {
+       height: 100%;
+       width: 100%;
+       background: #000;
+       font-family: 'Lato', sans-serif;
+       color: #fff;
+       margin: 0px;
+
    }
-    div.Row:nth-child(even)
-    {
-	background: #c6d4a8;
+   .clear {
+       clear: both;
+   }
+   @font-face 
+   {
+    font-family: boodle;
+    src: url(BOOTLE__.TTF);
+   }
+
+   #header 
+   {
+       padding: 15px 0px 60px 15px;
+   }
+   .headerText 
+   {
+      font-size: 5em;
+      line-height: .8;
+      font-family: boodle;
+      text-align: center;
+   }
+   #content 
+   {
+       padding-right: 10px;
+   }
+   #main-content 
+   {
+   position: absolute;
+   margin-right: 315px;
+   }
+   #sidebar 
+   {
+       float: right;
+       width: 300px;
+       height: 600px;
+       background-color: #181818;
+       margin-top: -10px;
     }
-    .Cell
-    {
-        display: table-cell;
-        padding-left: 20px;
+   form 
+   {
+       height: 20px;
     }
-    select:required:invalid 
-    {
-	color: #999;
-    }
-    option {
-	color: #000;
-    }
+   p 
+   {
+       font-weight: 400;
+   }
+   .Table {
+       display: Table;
+       margin: auto;
+   }
+   .Title {
+       display: table-caption;
+       text-align: center;
+       background: #181818;
+       margin-top: -10px;
+   }
+   #title {
+       font-weight: 900;
+       font-size: larger;
+       padding-top: 12.5px;
+       padding-bottom: 12.5px;
+   }
+   .Heading {
+       display: table-row;
+   }
+   .Row {
+       display: table-row;
+       
+   }
+   div.Row:nth-child(odd) {
+       background: #3c3c3c;
+   }
+   div.Row:nth-child(even) {
+       background: #181818;
+   }
+   .Cell {
+       display: table-cell;
+       padding-left: 20px;
+       padding-right: 10px;
+   }
+   select:required:invalid {
+       color: #999;
+   }
+   option {
+       color: #000;
+   }

@@ -15,7 +15,7 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
 
 ?>
 <div class="Table">
-    <div class="Title"><p id="title"><? echo "This Day in Rock History for $tdate" ?></p></div>
+    <div class="Title"><div id="title"><? echo "This Day in Rock History for $tdate" ?></div></div>
     <div class-"heading"></div>
 
 <?php
@@ -48,4 +48,5 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
      <div class="Cell">
            <p><small>Copyright &copy; <? echo date("Y"); ?> Tim Spencer</p>
      </div>
+</div>
 </div>
