@@ -1,61 +1,46 @@
+   @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
    * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-     box-sizing: border-box;
-     }
-
-       body {
+       -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+       box-sizing: border-box;
+   }
+   body {
        height: 100%;
-       width: 100%;
+       max-width: 950px;
        background: #000;
        font-family: 'Lato', sans-serif;
        color: #fff;
-       margin: 0px;
-
+       margin: 0 auto;
+   }
+   .col-xs-6 {
+       padding: 5px;
+   }
+   .content {
+       background: #181818;
    }
    .clear {
        clear: both;
    }
-   @font-face 
-   {
-    font-family: boodle;
-    src: url(BOOTLE__.TTF);
+   @font-face {
+       font-family: boodle;
+       src: url(BOOTLE__.TTF);
    }
-
-   #header 
-   {
-       padding: 15px 0px 60px 15px;
+   #header {
+       padding: 5px 5px 25px 5px;
    }
-   .headerText 
-   {
-      font-size: 5em;
-      line-height: .8;
-      font-family: boodle;
-      text-align: center;
+   .headerText {
+       margin: 0px 0px 20px 0px;
+       font-size: 5em;
+       line-height: .8;
+       font-family: boodle;
+       text-align: center;
    }
-   #content 
-   {
-       padding-right: 10px;
+   #content {
+       padding: 0px 5px;
+       0px;
+       5px;
    }
-   #main-content 
-   {
-   position: absolute;
-   margin-right: 315px;
-   }
-   #sidebar 
-   {
-       float: right;
-       width: 300px;
-       height: 600px;
-       background-color: #181818;
-       margin-top: -10px;
-    }
-   form 
-   {
-       height: 20px;
-    }
-   p 
-   {
+   p {
        font-weight: 400;
    }
    .Table {
@@ -66,7 +51,7 @@
        display: table-caption;
        text-align: center;
        background: #181818;
-       margin-top: -10px;
+       //margin-top: -10px;
    }
    #title {
        font-weight: 900;
@@ -79,7 +64,6 @@
    }
    .Row {
        display: table-row;
-       
    }
    div.Row:nth-child(odd) {
        background: #3c3c3c;
@@ -92,8 +76,44 @@
        padding-left: 20px;
        padding-right: 10px;
    }
-   select:required:invalid {
+   a {
+       color: #fff;
+   }
+   a:hover {
        color: #999;
+   }
+   form {
+       //height: 20px;
+   }
+   .btn-default {
+       color: #000;
+       background-color: #999;
+       border-color: #999;
+       margin-top: -3px;
+       height: 34px;
+   }
+   .form-control {
+       display: inline-block;
+       //width: 94px;
+       height: 34px;
+       color: #000;
+       background-color: #999;
+   }
+   #search-field {
+       width: 125px;
+   }
+   #day {
+       width: 76px;
+   }
+   #mo {
+       width: 76px;
+   }
+   select.form-control {
+       color: #000;
+       height: 34px;
+   }
+   select:required:invalid {
+       color: #000;
    }
    option {
        color: #000;
