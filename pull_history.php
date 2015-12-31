@@ -30,7 +30,12 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
 <div class-"heading"></div>
 
 <?php
+<<<<<<< HEAD
 	$db = mysql_connect("localhost","babewe5_wlup", "lup234");
+=======
+	/* Query the database */
+	$db = mysql_connect("localhost","user", "pw");
+>>>>>>> a1596ca853afec4b14d921e3819c87fc91f18177
 	mysql_select_db("babewe5_wlup",$db);
 
 	if($search) {
