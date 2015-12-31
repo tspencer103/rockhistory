@@ -5,7 +5,7 @@
                 url: '/rockhistory/pull_history.php',
                 data: "" + status,
                 success: function(data) {
-                    document.getElementById("history").innerHTML = data;
+                    document.getElementById("history").innerHTML = data; 
 
                 }
             });
@@ -55,4 +55,3 @@
             this.value = '';
             });
         });
-

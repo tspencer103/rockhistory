@@ -28,8 +28,7 @@
 
 <body>
 
-    <?php include_once( "/home/babewe5/public_html/googletagmanager.php") ?>
-
+    <?php include_once( "/home/babewe5/public_html/googletagmanager.php"); ?>
 
 
     <div class="content">
@@ -70,10 +69,12 @@
 
 
                 <!-- display results -->
-                <div id="history"></div>
+                <div id="history"></div> 
 
                 <br />
-
+                
+                <div class="col-xs-8"></div>
+                <div class="col-xs-4"><p><small>V2.0 Copyright &copy; <? echo date("Y"); ?> <a href="/about">Tim Spencer</a></p></div>
 
                 <div class="clear"></div>
             </div>
