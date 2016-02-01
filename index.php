@@ -67,7 +67,7 @@
 
             <div id="content">
 
-
+            <p>&nbsp;</p>
                 <!-- display results -->
                 <div id="history"></div> 
 
