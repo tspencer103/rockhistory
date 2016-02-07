@@ -1,25 +1,38 @@
 <?php
-    require("class_db.php");
- 
-    $db = new Db();    
-    if (is_bool($db) === TRUE) {
-    	die("Unable to connect to database");
+
+function __autoload($class_name) {
+    if(file_exists($class_name . '.php')) {
+        require_once($class_name . '.php');    
+    } else {
+        throw new Exception("Unable to load $class_name.");
     }
+}
+
+
+try {
+    $db = new Db();    
+} catch (Exception $e) {
+    echo $e->getMessage(), "\n";
+}
+
+if (is_bool($db) === TRUE) {
+      die("Unable to connect to database");
+}
 
 if (array_key_exists("search",$_POST)) { 
     $search = TRUE;
 } else {
    /* if not user selected mm/dd, get today's date, else set user choice */ 
     if($_POST) {
-	$month= $_POST['month'];
-	$day= $_POST['day'];
+  $month= $_POST['month'];
+  $day= $_POST['day'];
     } else {
-	$month = date('n');
-	$day = date('j');
+  $month = date('n');
+  $day = date('j');
     }
 }
 
-/* The mm/dd formatted for display only */	
+/* The mm/dd formatted for display only */  
 $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
 
 ?>
@@ -34,30 +47,34 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
     ?>
  </div>
 </div>
-<div class-"heading"></div>
+<!-- <div class-"heading"></div> -->
 
 <?php
 
-	if($search) {
-		$search  = "%" . $_POST[search] . "%";
-		$result = $db->select("SELECT * FROM `RockHistory081512` WHERE history LIKE '$search' ORDER BY year"); 
-	} else {	
-		$result = $db->select("SELECT * FROM RockHistory081512 WHERE month = '$month' AND day = '$day' ORDER BY year");
-	}
+  if($search) {
+    $search  = "%" . $_POST[search] . "%";
+    $result = $db->select("SELECT * FROM `RockHistory081512` WHERE history LIKE '$search' ORDER BY year"); 
+  } else {  
+    $result = $db->select("SELECT * FROM RockHistory081512 WHERE month = '$month' AND day = '$day' ORDER BY year");
+  }
 
-		        /* Got result? Display it.. as in return the data to Ajax */
-			foreach($result as $row) {
-			?>
+            /* Got result? Display it.. as in return the data to Ajax */
+      foreach($result as $row) {
+      ?>
 
-			<div class="Row">
-        			<div class="Cell">
-            				<p><? echo $row["year"] ?></p>
-        			</div>
-        			<div class="Cell">
-            				<p><? echo $row["history"] ?></p>						
-        			</div>
-			</div>
-			<?
-			}
-			?>
+      <div class="Row">
+              <div class="Cell date">
+                    <p><? 
+                     if($search) { echo str_pad($row['month'], 2, "0", STR_PAD_LEFT) . '.' . str_pad($row['day'], 2, "0", STR_PAD_LEFT) . '.'; } 
+                     echo $row["year"];
+                    ?></p>
+                     
+              </div>
+              <div class="Cell">
+                    <p><? echo $row["history"] ?></p>           
+              </div>
+      </div>
+      <?
+      }
+      ?>
 </div>
