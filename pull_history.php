@@ -19,8 +19,10 @@ if (is_bool($db) === TRUE) {
       die("Unable to connect to database");
 }
 
+/* check for user search and sanitize if exists */
 if (array_key_exists("search",$_POST)) { 
-    $search = TRUE;
+    $search = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING);
+    $search_string = '%' . $search . '%';
 } else {
    /* if not user selected mm/dd, get today's date, else set user choice */ 
     if($_POST) {
@@ -40,7 +42,7 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
     <div class="Title"><div id="title">
     <?php
        if ($search) {
-           echo "Search results for '" . $_POST['search'] . "'";
+           echo "Search results for '" . $search . "'";
        } else {
            echo "Rock History for $tdate";
        }
@@ -52,8 +54,7 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
 <?php
 
   if($search) {
-    $search  = "%" . $_POST[search] . "%";
-    $result = $db->select("SELECT * FROM `RockHistory081512` WHERE history LIKE '$search' ORDER BY year"); 
+    $result = $db->select("SELECT * FROM `RockHistory081512` WHERE history LIKE '$search_string' ORDER BY year"); 
   } else {  
     $result = $db->select("SELECT * FROM RockHistory081512 WHERE month = '$month' AND day = '$day' ORDER BY year");
   }
