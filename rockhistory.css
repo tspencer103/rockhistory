@@ -8,8 +8,13 @@
    body {
        height: 100%;
        max-width: 950px;
-       background: #000;
-       font-family: 'Lato', sans-serif;
+       //background: #000;
+       background-image: url('bg.jpg');
+       background-attachment: fixed;
+	background-size:     cover; 
+        background-repeat:   no-repeat;
+        background-position: center center;            
+        font-family: 'Lato', sans-serif;
        color: #fff;
        margin: 0 auto;
    }
@@ -33,14 +38,16 @@
        margin: 0px 0px 20px 0px;
        font-size: 5em;
        line-height: .8;
-       font-family: boodle;
+       font-family: boodle, Georgia, Serif;
        text-align: center;
+   }
+   .headerText a:hover {
+       text-decoration: none;
+       color: inherit;
    }
    #content {
        padding: 0px 5px;
-       0px;
-       5px;
-   }
+    }
    p {
        font-weight: 400;
    }
@@ -119,3 +126,4 @@
    option {
        color: #000;
    }
+ 
