@@ -23,11 +23,12 @@ if (is_bool($db) === TRUE) {
 if (array_key_exists("search",$_POST)) { 
     $search = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING);
     $search_string = '%' . $search . '%';
+    
 } else {
-   /* if not user selected mm/dd, get today's date, else set user choice */ 
+   /* if not user selected mm/dd, get today's date */ 
     if($_POST) {
-  $month= $_POST['month'];
-  $day= $_POST['day'];
+  $month= filter_input(INPUT_POST, 'month', FILTER_SANITIZE_ENCODED, FILTER_FLAG_STRIP_LOW);
+  $day= filter_input(INPUT_POST, 'day', FILTER_SANITIZE_ENCODED, FILTER_FLAG_STRIP_LOW);
     } else {
   $month = date('n');
   $day = date('j');
@@ -54,7 +55,7 @@ $tdate=date("F j", mktime(0, 0, 0, $month, $day, 0));
 <?php
 
   if($search) {
-    $result = $db->select("SELECT * FROM `RockHistory081512` WHERE history LIKE '$search_string' ORDER BY year"); 
+    $result = $db->select("SELECT * FROM `RockHistory081512` WHERE history LIKE '$search_string' ORDER BY year");     
   } else {  
     $result = $db->select("SELECT * FROM RockHistory081512 WHERE month = '$month' AND day = '$day' ORDER BY year");
   }
